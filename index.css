@@ -1,0 +1,47 @@
+table, th, td {
+  border: 1px solid black;
+}
+.guy{
+  background-color: #64a0ea;
+  padding: 10px;
+  text-align: center;
+}
+.dude{
+  background-color: #e66464;
+  padding: 10px;
+  text-align: center;
+}
+.man{
+  background-color: #64eaa0;
+  padding: 10px;
+  text-align: center;
+  height: 1200px;
+  width: 1450px;
+}
+#specs{
+    display: flex;
+    flex-wrap:nowrap;
+    spacing:10px;
+    justify-content: space-between;
+}
+.boy{
+  background-color: #eae864;
+  padding: 10px;
+  text-align: center;
+}
+.full-navbar {
+  display: flex;                
+  width: 100%;                
+  border: 2px solid #000;      
+  background-color: #5c9bf5;  
+}
+
+.full-navbar a {
+  flex: 1;                      
+  text-align: center;
+  table-layout: fixed;          
+  border: 1px solid #000;       
+  color: #1a0dab;
+  text-decoration: underline;
+  display: block;
+}
