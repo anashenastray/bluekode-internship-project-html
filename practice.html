@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Practice Webpage</title>
+  <link rel="stylesheet" href="practice.css">
+  <script src="practice.js" defer></script>
+</head>
+<body>
+
+<header>
+  <h1>Welcome to My Website</h1>
+  <p id="greeting">Welcome to my page!</p>
+  <button id="greet-button" type="button">Say Hello</button>
+  <nav>
+    <a href="https://example.com">Home</a>
+    <a href="https://example.com">About</a>
+    <a href="https://example.com">Contact</a>
+  </nav>
+</header>
+
+<main>
+
+  <section class="layer-box layer-intro">
+    <h2>About Me</h2>
+    <p>Hello! I am a student practicing <strong>web development</strong>. I enjoy learning how to code and make things look <em>neat</em>.</p>
+    
+    <figure>
+      <img src="profile.jpg" alt="A photo of me sitting at my study desk">
+      <figcaption>My study space</figcaption>
+    </figure>
+
+    <p>Check out one of my favorite resources: <a href="https://example.com">Click here to visit website</a></p>
+  </section>
+
+  <section class="layer-box layer-showcase">
+    <h2>My Highlights</h2>
+    <section class="cards">
+      <section class="card card-blue">
+        <h2>Web Skills</h2>
+        <p>Things I am practicing right now:</p>
+        <ul>
+          <li>HTML Structure</li>
+          <li>Text Formatting</li>
+          <li>Linking Pages</li>
+        </ul>
+      </section>
+
+      <section class="card card-green">
+        <h2>Hobbies</h2>
+        <p>Things I like doing outside studying:</p>
+        <ol>
+          <li>Drawing sketches</li>
+          <li>Playing badminton</li>
+          <li>Reading books</li>
+        </ol>
+      </section>
+
+      <section class="card card-purple">
+        <h2>Goals</h2>
+        <p>My target milestones:</p>
+        <ul>
+          <li>Build clean layouts</li>
+          <li>Understand responsive design</li>
+          <li>Master CSS flexbox</li>
+        </ul>
+      </section>
+    </section>
+  </section>
+
+  <section class="layer-box layer-form">
+    <h2>Contact Me</h2>
+    
+    <form>
+      <label for="user-name">Your Name</label>
+      <input type="text" id="user-name" name="user-name" placeholder="Enter your full name" required>
+
+      <label for="user-email">Email Address</label>
+      <input type="email" id="user-email" name="user-email" placeholder="example@email.com" required>
+
+      <label for="user-message">Message</label>
+      <textarea id="user-message" name="user-message" placeholder="Type your message here..." required></textarea>
+
+      <button type="submit">Send Message</button>
+    </form>
+  </section>
+
+</main>
+
+<footer>
+  <p>Practice page created for class tasks.</p>
+</footer>
+
+</body>
+</html>
