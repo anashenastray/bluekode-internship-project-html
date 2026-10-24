@@ -30,47 +30,102 @@ if (welcomeButton) {
   welcomeButton.addEventListener("click", greetVisitor);
 }
 
-const records = [
+let records = [
   {
-    name: "Blue Water Bottle",
-    detail: "Stainless steel flask found near chemistry lab",
-    isClaimed: false
+    id:0,
+    namein: "Blue Water Bottle",
+    isClaimed: false,
+  
   },
   {
-    name: "Casio Scientific Calculator",
-    detail: "Left on library desk table 4",
-    isClaimed: true
+    id:1,
+    namein: "Casio Scientific Calculator",
+    isClaimed: true,
+  
   }
 ];
+let id=1
+const list = document.querySelector("#record-list");
+const summary = document.querySelector("#summary");
 
 function renderRecords() {
-  const list = document.querySelector("#record-list");
-  if (!list) return;
-
-
   list.textContent = "";
-
-  
   for (const record of records) {
-
-    const p = document.createElement("p");
-
-    
+    const row = document.createElement("div");
     let statusLabel = "";
     if (record.isClaimed === true || record.status === "claimed") {
       statusLabel = "Claimed";
-      p.className = "record-item status-claimed";
+      row.className = "record-item status-claimed";
     } else {
       statusLabel = "Unclaimed";
-      p.className = "record-item status-unclaimed";
+      row.className = "record-item status-unclaimed";
     }
-
+    const fringebutton = document.createElement("button");
+    if (record.isClaimed === true) {
+      fringebutton.textContent = "Mark as Unclaimed";
+    } else {
+      fringebutton.textContent = "Mark as Claimed";
+    }
+    fringebutton.className = "hu"
+    fringebutton.addEventListener("click", function() {
+      fringebuttonw(record.id) })
     
-    p.textContent = record.name + " — " + record.detail + " (" + statusLabel + ")";
-
+    let p = document.createElement("p");
+    p.textContent = record.namein + " — " + " (" + statusLabel + ")";
     
-    list.appendChild(p);
+    const deletebutton = document.createElement("button");
+    deletebutton.textContent = "delete";
+    deletebutton.addEventListener("click",deletebuttonw)
+    deletebutton.className = "hu"
+    row.append(p,fringebutton,deletebutton);
+    console.log(records)
+    list.appendChild(row);
   }
 }
+
+function adds(event){
+  event.preventDefault()
+  let namein = document.querySelector("#item-name").value.trim();
+  let statusInput = document.querySelector("#item-status").value.trim();
+
+  if (namein === "" || statusInput === "") {
+    alert("Please fill in both the item name and status.");
+    return;
+  }
+  id=id+1
+  const newRecord = {
+    namein: namein,
+    id:id,
+    isClaimed: statusInput.toLowerCase() === "claimed"
+  };
+
+  records.push(newRecord);
+  console.log(records)
+  namein ="";
+  statusInput="";
+  renderRecords();
+}
+
+addrecord.addEventListener("click", adds);
+
+function fringebuttonw(id){
+  for(const record of records){
+   if (record.id==id){
+    record.isClaimed=!record.isClaimed;
+    break;
+  }
 renderRecords();
+};
+};
+
+function deletebuttonw(id) {
+    const kept = [];
+    for (const record of records) {
+      if (record.id !== id) {
+      kept.push(record);
+      }
+      break;
+    }
+records = kept;
 renderRecords();
+};
