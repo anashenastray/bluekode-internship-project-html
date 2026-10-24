@@ -1,110 +1,180 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>My Practice Webpage</title>
+  <title>Portfolio</title>
   <link rel="stylesheet" href="practice.css">
   <script src="practice.js" defer></script>
 </head>
 <body>
 
 <header>
-  <h1>Welcome to My Website</h1>
-  <p id="greeting">Welcome to my page!</p>
-  <button id="greet-button" type="button">Say Hello</button>
-  <nav>
-    <a href="#home">Home</a>
-    <a href="#about">About</a>
-    <a href="#contact">Contact</a>
-  </nav>
+  <div class="header-inner">
+    <div class="brand">
+      <a href="#about" class="brand-name">pranav.dev</a>
+    </div>
+
+    <nav>
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#records">Records</a>
+      <a href="#skills">Skills</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+    <button id="greet-button" type="button" class="btn-text">Say hello</button>
+  </div>
 </header>
 
 <main>
 
-  <section class="layer-box layer-intro">
-    <h2>Interactive Greeting</h2>
-    <label for="name-input">Enter your name</label>
-    <input id="name-input" type="text" placeholder="Type your name here">
-    <button id="welcome-button" type="button">Greet Me</button>
-    <p id="welcome-message"></p>
-  </section>
-
-  <section class="layer-box layer-intro">
-    <h2>About Me</h2>
-    <p>Hello! I am a student practicing <strong>web development</strong>. I enjoy learning how to code and make things look <em>neat</em>.</p>
+  <section class="intro-section">
+    <p id="greeting" class="eyebrow">Welcome to my page!</p>
+    <h1>Class 11 STEM student, software developer, and hardware tinkerer.</h1>
+    <p class="intro-bio">I spend my time between advanced mathematics, physics problem solving, and building useful tools with clean software and discrete electronics. Currently focused on competitive exams, systems design, and web development.</p>
     
-    <figure>
-      <img src="profile.jpg" alt="A photo of me sitting at my study desk">
-      <figcaption>My study space</figcaption>
-    </figure>
-
-    <p>Check out one of my favorite resources: <a href="#some-website">Click here to visit website</a></p>
+    <div class="guestbook-inline">
+      <label for="name-input">Leave your name</label>
+      <div class="input-row">
+        <input id="name-input" type="text" placeholder="Your name...">
+        <button id="welcome-button" type="button">Greet</button>
+      </div>
+      <p id="welcome-message"></p>
+    </div>
   </section>
+  <hr class="section-divider">
 
-  <section class="layer-box layer-showcase">
-    <h2>My Highlights</h2>
+  <section id="about" class="layer-box">
+    <h2>About</h2>
+    <div class="about-content">
+      <div class="about-text">
+        <p>I believe in understanding things from <strong>first principles</strong>—whether that means breaking down mechanics derivations, debugging Android runtimes, or etching custom hardware circuits.</p>
+        <p>Outside of study and code, I run selective poultry breeding experiments focused on physical traits, analyze competitive strategy in games, and read <em>epic manga</em> with deep worldbuilding.</p>
+        <p>Check out my source repositories and experiments on <a href="https://github.com" target="_blank">GitHub</a>.</p>
+      </div>
+
+      <figure>
+        <img src="profile.jpg" alt="A clean desk workstation with books and a display">
+        <figcaption>Workspace & study setup</figcaption>
+      </figure>
+    </div>
+  </section>
+  <hr class="section-divider">
+
+  <section id="projects" class="layer-box">
+    <h2>Selected Work</h2>
     <section class="cards">
-      <section class="card card-blue">
-        <h2>Web Skills</h2>
-        <p>Things I am practicing right now:</p>
-        <ul>
-          <li>HTML Structure</li>
-          <li>Text Formatting</li>
-          <li>Linking Pages</li>
-        </ul>
-      </section>
 
-      <section class="card card-green">
-        <h2>Hobbies</h2>
-        <p>Things I like doing outside studying:</p>
+      <article class="card">
+        <div class="card-meta">Android & Python</div>
+        <h2>Angel Workspace</h2>
+        <p>A focused Android study launcher featuring on-device indexing, low-latency audio telemetry, and local document caching.</p>
+        <ul>
+          <li>Chaquopy Python runtime</li>
+          <li>Jetpack Compose UI</li>
+          <li>SQLite FTS5 text search</li>
+        </ul>
+      </article>
+
+      <article class="card">
+        <div class="card-meta">Web Platform</div>
+        <h2>Bluekode</h2>
+        <p>A centralized digital student profile and record tracking system designed to streamline academic achievements.</p>
+        <ul>
+          <li>Structured record schemas</li>
+          <li>Clean administrative dashboard</li>
+          <li>Normalized performance metrics</li>
+        </ul>
+      </article>
+
+      <article class="card">
+        <div class="card-meta">Hardware & Sensors</div>
+        <h2>PureFlow Monitor</h2>
+        <p>An optical inspection tool designed to assess total polar compounds in used cooking oils for safety standards.</p>
         <ol>
-          <li>Drawing sketches</li>
-          <li>Playing badminton</li>
-          <li>Reading books</li>
+          <li>Photodiode transmission array</li>
+          <li>Thermal compensation curves</li>
+          <li>Instant readout interface</li>
         </ol>
-      </section>
+      </article>
 
-      <section class="card card-purple">
-        <h2>Goals</h2>
-        <p>My target milestones:</p>
-        <ul>
-          <li>Build clean layouts</li>
-          <li>Understand responsive design</li>
-          <li>Master CSS flexbox</li>
-        </ul>
-      </section>
     </section>
   </section>
+  <hr class="section-divider" aria-hidden="true">
 
-  <section class="layer-box layer-form">
-    <h2>Contact Me</h2>
-    
+  <!-- Lost & Found / Sample Records Section -->
+  <section id="records" class="layer-box">
+    <h2>Lost & Found Log</h2>
+    <p>Sample item registry rendered dynamically via JavaScript:</p>
+    <div id="record-list" class="records-container"></div>
+  </section>
+  <hr class="section-divider">
+
+  <section id="skills" class="layer-box">
+    <h2>Core Stack & Focus</h2>
+    <div class="skills-grid">
+      <div class="skill-group">
+        <h2>Web & Software</h2>
+        <ul>
+          <li>HTML5 & Semantic markup</li>
+          <li>Modern CSS & Flexbox</li>
+          <li>JavaScript (ES6+)</li>
+          <li>Python scripting</li>
+        </ul>
+      </div>
+
+      <div class="skill-group">
+        <h2>Hardware & Tools</h2>
+        <ul>
+          <li>Circuit prototyping</li>
+          <li>Transistor switching</li>
+          <li>Git & CLI tools</li>
+          <li>Obsidian workflows</li>
+        </ul>
+      </div>
+
+      <div class="skill-group">
+        <h2>STEM Disciplines</h2>
+        <ul>
+          <li>Classical Mechanics</li>
+          <li>Differential & Integral Calculus</li>
+          <li>Coordinate Geometry</li>
+          <li>Physical Chemistry</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+  <hr class="section-divider">
+
+  <section id="contact" class="layer-box">
+    <h2>Contact</h2>
+    <p>Feel free to reach out about research projects, tech discussions, or book recommendations.</p>
+
     <form>
-      <label for="user-name">Your Name</label>
-      <input type="text" id="user-name" name="user-name" placeholder="Enter your full name" required>
+      <label for="user-name">Name</label>
+      <input type="text" id="user-name" name="user-name" placeholder="Your name" required>
 
-      <label for="user-email">Email Address</label>
-      <input type="email" id="user-email" name="user-email" placeholder="example@email.com" required>
+      <label for="user-email">Email</label>
+      <input type="email" id="user-email" name="user-email" placeholder="you@example.com" required>
 
       <label for="user-message">Message</label>
-      <textarea id="user-message" name="user-message" placeholder="Type your message here..." required></textarea>
+      <textarea id="user-message" name="user-message" placeholder="What's on your mind?" required></textarea>
 
-      <button type="submit">Send Message</button>
+      <button type="submit">Send message</button>
     </form>
-  </section>
-
-  <section class="layer-box layer-thick">
-    <input id="nam" type="text "placeholder="Type your name here"></input>
-    <h2>Want to say hi?</h2>
-    <div id="towish"></div>
-    <button id="shamay" type="button">Send Message</button>
-    
   </section>
 
 </main>
 
 <footer>
-  <p>You have reached the bottom of the page.</p>
+  <div class="footer-inner">
+    <p>"Hello{hum}"</p>
+    <div class="footer-links">
+      <a href="https://github.com" target="_blank">GitHub</a>
+      <a href="#about">Top</a>
+    </div>
+  </div>
 </footer>
 
 </body>
